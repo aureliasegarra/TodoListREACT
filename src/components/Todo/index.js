@@ -1,10 +1,18 @@
+// Import React
 import React from 'react';
 
+// Import data
 import './style.scss';
+import Header from 'src/components/Header';
+import Counter from 'src/components/Counter';
+import Tasks from 'src/components/Tasks';
 
+// Component
 const Todo = () => (
-  <div>
-    <p>Salut</p>
+  <div className="todo">
+    <Header />
+    <Counter />
+    <Tasks />
   </div>
 );
 

@@ -1,0 +1,18 @@
+.inputTask {
+  width: 100%;
+  background-color: #1c382f;
+  border: 1px solid #183129;
+  box-shadow: inset 0 0 25px rgba(0,0,0,.1);
+  padding: 2rem 3rem;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 5rem;
+}
+
+.inputTask:focus {
+  box-shadow: inset 0 0 25px rgba(0,0,0,.5);
+}
+
+.inputTasks placeholder {
+  color: rgba(255, 255, 255, .5);
+}
