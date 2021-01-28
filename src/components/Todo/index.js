@@ -9,12 +9,15 @@ import Tasks from 'src/components/Tasks';
 import tasksData from 'src/data/tasks';
 
 // Component
-const Todo = () => (
-  <div className="todo">
-    <Form />
-    <Counter count={1} />
-    <Tasks tasks={tasksData} />
-  </div>
-);
+const Todo = () => {
+  const undoneTasksNumber = tasksData.filter((task) => !task.done).length;
+  return (
+    <div className="todo">
+      <Form />
+      <Counter count={undoneTasksNumber} />
+      <Tasks tasks={tasksData} />
+    </div>
+  );
+};
 
 export default Todo;

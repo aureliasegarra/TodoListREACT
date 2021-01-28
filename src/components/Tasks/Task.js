@@ -5,17 +5,20 @@ import PropTypes from 'prop-types';
 // Import data
 import './style.scss';
 
-const Task = ({ id, label, done }) => (
-  <li className="task">
-    <input
-      type="checkbox"
-      className="task__checkbox"
-      id={id}
-      checked={done}
-    />
-    <label htmlFor={id}>{label}</label>
-  </li>
-);
+const Task = ({ id, label, done }) => {
+  const classnames = done ? 'task task--done' : 'task';
+  return (
+    <li className={classnames}>
+      <input
+        type="checkbox"
+        className="task__checkbox"
+        id={id}
+        checked={done}
+      />
+      <label htmlFor={id}>{label}</label>
+    </li>
+  );
+};
 
 Task.propTypes = {
   id: PropTypes.number.isRequired,
