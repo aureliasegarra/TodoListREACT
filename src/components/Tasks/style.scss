@@ -1,7 +1,18 @@
-.task-item {
+@use 'src/styles/vars' as v;
+
+.task {
   padding: 2rem 3rem;
   background-color: #eee;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: .5rem;
+}
+
+.task--done {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.task__checkbox {
+margin-right: 1rem;
 }

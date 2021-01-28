@@ -5,13 +5,16 @@ import React from 'react';
 import './style.scss';
 
 // Import component
-import Item from './Item';
+import Task from './Task';
 
 // Component
 const Tasks = () => (
-  <ul>
-    <Item />
+  <ul className="tasks">
+    <Task />
+    <Task />
+    <Task />
   </ul>
+
 );
 
 export default Tasks;

@@ -3,15 +3,15 @@ import React from 'react';
 
 // Import data
 import './style.scss';
-import Header from 'src/components/Header';
+import Form from 'src/components/Form';
 import Counter from 'src/components/Counter';
 import Tasks from 'src/components/Tasks';
 
 // Component
 const Todo = () => (
   <div className="todo">
-    <Header />
-    <Counter />
+    <Form />
+    <Counter count={1} />
     <Tasks />
   </div>
 );

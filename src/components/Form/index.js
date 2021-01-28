@@ -5,14 +5,14 @@ import React from 'react';
 import './style.scss';
 
 // Component
-const Header = () => (
-  <div>
+const Form = () => (
+  <form>
     <input
       className="inputTask"
       type="text"
       placeholder="Ajouter une tâche"
     />
-  </div>
+  </form>
 );
 
-export default Header;
+export default Form;
