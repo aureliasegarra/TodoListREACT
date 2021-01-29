@@ -1,18 +1,17 @@
 @use 'src/styles/vars' as v;
 
 .task {
-  padding: 2rem 3rem;
-  background-color: #eee;
-  border: 1px solid #ccc;
+  padding: v.$gutter * 2 v.$gutter * 3;
+  background-color: v.$color-task;
+  border: 1px solid v.$color-task-border;
   border-radius: 10px;
-  margin-bottom: .5rem;
-}
-
-.task--done {
-  text-decoration: line-through;
-  opacity: .5;
-}
-
-.task__checkbox {
-margin-right: 1rem;
+  box-shadow: 5px 5px 5px rgb(140, 30, 69);
+  margin-bottom: v.$gutter * .5;
+  &--done {
+    text-decoration: line-through;
+    opacity: .5;
+  }
+  &__checkbox {
+    margin-right: v.$gutter;
+  }
 }

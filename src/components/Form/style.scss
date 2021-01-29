@@ -1,20 +1,21 @@
 @use 'src/styles/vars' as v;
 
-.inputTask {
-  width: 100%;
-  background-color: #1c382f;
-  border: 1px solid #183129;
-  box-shadow: inset 0 0 25px rgba(0,0,0,.1);
-  padding: 2rem 3rem;
-  color: white;
-  font-size: 2em;
-  margin-bottom: 5rem;
-}
-
-.inputTask:focus {
-  box-shadow: inset 0 0 25px rgba(0,0,0,.5);
-}
-
-.inputTasks placeholder {
-  color: rgba(255, 255, 255, .5);
+.form {
+  &__input {
+    width: 100%;
+    background-color: v.$color-input;
+    border: 2px solid v.$color-border;
+    border-radius: 20px;
+    box-shadow: v.$color-shadow;
+    padding: v.$gutter * 2 v.$gutter * 3;
+    color: v.$color-light;
+    font-size: 2em;
+    margin-bottom: v.$gutter * 5;
+    &:focus {
+      box-shadow: v.$color-shadow-focus;
+    }
+    &::placeholder {
+      color: v.$color-placeholder;
+    }
+  }
 }

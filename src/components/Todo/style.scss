@@ -1,10 +1,7 @@
-body {
-  background-color: #2e5849;
-  font-family: 'Spartan', sans-serif;
-}
+@use 'src/styles/vars' as v;
 
-.todo {
+.app {
   width: 90%;
-  margin: 2rem auto;
+  margin: v.$gutter * 2 auto;
   max-width: 600px;
 }

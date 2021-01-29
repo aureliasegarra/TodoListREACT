@@ -4,36 +4,25 @@ import PropTypes from 'prop-types';
 import Task from './Task';
 import './style.scss';
 
-const Tasks = ({ tasks }) => {
-  const tasksList = tasks.map((task) => {
-    console.log('object');
-
-    return (
+const Tasks = ({ tasks, setTaskDone }) => (
+  <ul className="tasks">
+    {tasks.map((task) => (
       <Task
         key={task.id}
-        // id={task.id}
-        // label={task.label}
-        // done={task.done}
-        {...task} // the spread operator to get the object prop
+        onChangeDone={setTaskDone}
+        {...task}
       />
-    );
-  });
-
-  return (
-    <ul className="tasks">
-      {tasksList}
-    </ul>
-  );
-};
+    ))}
+  </ul>
+);
 
 Tasks.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      label: PropTypes.string.isRequired,
-      done: PropTypes.bool.isRequired,
     }),
   ).isRequired,
+  setTaskDone: PropTypes.func.isRequired,
 };
 
 export default Tasks;

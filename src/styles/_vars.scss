@@ -1,14 +1,13 @@
-$color-lighten: #2e5849;
-$color-alt: #1c382f;
-$color-darken: #183129;
+@use "sass:color";
 
-$shadow-input: rgba(0,0,0,.1);
-$shadow-focus: rgba(0,0,0,.5);
-
-$color-text-input: #fff;
-$color-text-ph: rgba(255, 255, 255, .5);
-
-$color-task-bc: #eee;
+$color-base: #b32a65;
+$color-input: color.scale($color-base, $lightness: -20%);
+$color-border: color.scale($color-base, $lightness: -40%);
+$color-light: white;
+$color-placeholder: color.scale($color-light, $alpha: -50%);
+$color-task: #eee;
 $color-task-border: #ccc;
+$color-shadow: inset 0 0 25px rgba(0,0,0,.1);
+$color-shadow-focus: inset 0 0 25px rgba(0,0,0,.5);
 
 $gutter: 1rem;
