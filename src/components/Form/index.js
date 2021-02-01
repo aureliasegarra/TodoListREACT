@@ -7,19 +7,17 @@ import './style.scss';
 
 // Component
 class Form extends React.Component {
-  // on crée une propriété de classe qui prendra la référence du composant
-  // une fois inséré dans le DOM
+  // a class property will take the reference of the component once inserted in the DOM
+  // ! concept of reference to review
   taskInput = React.createRef();
 
   componentDidMount() {
-    // champs texte en focus avec la méthode React
+    // text fields in focus with React method
     this.taskInput.current.focus();
   }
 
   handleOnSubmit = (event) => {
-    // les props dans une classe deviennent partie du contexte
-    // il faut bien mettre this.props
-    // on peut donc destructurer les props comme le state
+    // props in a class become part of the context - destructuration possible
     const { onSubmitForm } = this.props;
     event.preventDefault();
     onSubmitForm();
@@ -27,7 +25,6 @@ class Form extends React.Component {
 
   handleOnChange = (event) => {
     const { onChangeInput } = this.props;
-
     onChangeInput(event.target.value);
   };
 
@@ -37,14 +34,14 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.handleOnSubmit} className="form">
         <input
-          // je viens donner la référence à mon composant pour y avoir accès une fois dans le DOM
+          // I come to give the reference to my component to have access to it once in the DOM
           ref={this.taskInput}
           type="text"
           placeholder="Ajouter une tâche"
           className="form__input"
           value={inputValue}
           onChange={this.handleOnChange}
-          // autoFocus plus rapide !
+          // autoFocus faster !
         />
       </form>
     );

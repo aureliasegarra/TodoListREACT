@@ -9,10 +9,6 @@ const Task = ({
 }) => {
   const classnames = done ? 'task task--done' : 'task';
 
-  // const handleOnChange = () => {
-  //   onChangeDone(id);
-  // };
-
   return (
     <li className={classnames}>
       <input

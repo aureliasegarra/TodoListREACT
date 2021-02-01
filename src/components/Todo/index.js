@@ -11,22 +11,21 @@ import tasksData from 'src/data/tasks';
 
 // == Composant
 class Todo extends React.Component {
-  // ici pas besoin de déclarer le state dans le constructor
-  // on a babel-class-properties
+  // no need to declare the state in the constructor
+  // we have babel-class-properties
   state = {
     tasks: tasksData,
     taskLabel: '',
   }
 
-  // on passe par une propriété de class où on vient stocker une fonction
-  // flêchée pour ne pas avoir à lier (bind) le contexte (this) de la classe à la fonction
+  // we go through a property of class to keep the "this"
   addTask = () => {
     const { taskLabel, tasks } = this.state;
 
-    // récupérer les ids des tâches = transformer le tableau de tâche en tableau d'ids
+    // get task ids = transform task array into ids array
     const ids = tasks.map((task) => task.id);
 
-    // on va déterminer quel est l'id max
+    // determine the max id
     const maxId = Math.max(...ids);
 
     const newTask = {
@@ -35,14 +34,7 @@ class Todo extends React.Component {
       label: taskLabel,
     };
 
-    // lorsqu'on modifie un tableau dans le state
-    // il faut repartir d'un nouveau tableau
-    // A NE PAS FAIRE !!
-    // const { tasks } = this.state;
-    // tasks.push(newTask);
-
-    // en déclaratif, on ne modifie jamais les données, on repart avec de nouvelles références
-    // on parle ici d'IMMUTABILITE
+    // Notion of IMMUTABILITY = declarative,never modify the data, start again with new references
     const newTasks = [...tasks, newTask];
 
     this.setState({
@@ -61,18 +53,10 @@ class Todo extends React.Component {
     const { tasks } = this.state;
 
     const newTasks = tasks.map((task) => {
-      // ici on teste si la tâche courante a le même id
-      // que celui passer en paramètre
+      // current task has the same id as the one passed in parameter?
       if (task.id === taskId) {
-        // A NE PAS FAIRE
-        // task c'est un objet, il faut donc créer une nouvelle référence
-        // task.done = !task.done;
-
-        // il faut créer un nouvel objet pour avoir ue nouvelle référence
         return {
           ...task,
-          // on peut déverser les propriétés d'un objet dans un autre
-          // et à la suite, on peut spécifier les propriétés qui changent
           done: !task.done,
         };
       }
@@ -93,12 +77,6 @@ class Todo extends React.Component {
     const doneTasks = tasks.filter((task) => task.done);
 
     const sortedTasks = [...undoneTasks, ...doneTasks];
-
-    // const sortedTasks = [...tasks];
-    // // true - false === 1
-    // // false - true === -1
-    // // true - true === 0
-    // sortedTasks.sort((a, b) => a.done - b.done);
 
     return (
       <div className="app">
